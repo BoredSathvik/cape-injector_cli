@@ -1,8 +1,13 @@
 import { join } from 'https://deno.land/std@0.97.0/path/mod.ts';
 import { exists } from 'https://deno.land/std@0.97.0/fs/mod.ts';
 
+const mcNames: { x64: string; x32: string } = await (
+	await fetch('https://raw.githubusercontent.com/BoredSathvik/cape-injector_cli/main/mcPath.json')
+).json();
+const mcName = parseInt(Deno.env.get('architecture_bits')!) == 32 ? mcNames.x32 : mcNames.x64;
+
 const programfiles = Deno.env.get('programfiles') ?? 'C:/Program Files';
-const mcPath = 'Microsoft.MinecraftUWP_1.16.22101.0_x64__8wekyb3d8bbwe';
+const mcPath = mcName;
 const skinPack = join(programfiles, 'WindowsApps', mcPath, 'data/skin_packs');
 const persona = join(skinPack, 'persona');
 

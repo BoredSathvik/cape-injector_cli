@@ -56,11 +56,11 @@ switch (Deno.args[0].toLowerCase()) {
 		break;
 
 	case '/help':
-		console.log('cpi_1.16.221 --clear\ncpi_1.16.221 --inject "pathToCapePack"');
+		console.log('cpi_1.16.221 /clear\ncpi_1.16.221 /inject "pathToCapePack"');
 		break;
 
 	default:
-		console.log('cpi_1.16.221 --clear\ncpi_1.16.221 --inject "pathToCapePack"');
+		console.log('cpi_1.16.221 /clear\ncpi_1.16.221 /inject "pathToCapePack"');
 
 		break;
 }
